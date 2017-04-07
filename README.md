@@ -1,4 +1,6 @@
-# Curso sobre VueJS2 para EsucelaIt
+# Curso sobre VueJS2 para EscuelaIt
+
+  https://escuela.it/cursos/curso-desarrollo-profesional-vuejs
 
 ## Requisitos
 
