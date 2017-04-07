@@ -20,7 +20,7 @@
                 selectedMovie: {}
             }
         },
-        mounted: function () {
+        mounted () {
             this.searchMovie(Vue.config.movues.FILM)
         },
         methods: {
