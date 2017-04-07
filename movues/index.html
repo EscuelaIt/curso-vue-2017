@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta http-equiv='X-UA-Compatible' content='ie=edge' />
+    <title>Movues</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/master.css">
+</head>
+
+<body>
+    <main role="main" id="root" class="movie-wrapper">
+        <h1>{{title}}</h1>
+        <movie :selected-movie="selectedMovie"></movie>
+    </main>
+
+    <script type="text/x-template" id="single-movie">
+        <transition appear name="slide-fade">
+            <section class="single-movie-wrapper">
+                 <img v-if="selectedMovie.Poster != 'N/A'"  class="movie-poster" :src="selectedMovie.Poster" :alt="selectedMovie.Title + ' poster'">
+                <div class="movie-data">
+                    <h2>{{ selectedMovie.Title }}</h2>
+                    <p class="plot"> {{ selectedMovie.Plot }} </p>
+                </div>
+                <footer class="movie-footer">
+                    <dl>
+                        <dt>Genre</dt>
+                        <dd>{{ selectedMovie.Genre }}</dd>
+                        <dt>Year</dt>
+                        <dd>{{ selectedMovie.Year }}</dd>
+                        <dt>Director</dt>
+                        <dd>{{ selectedMovie.Director }}</dd>
+                        <dt>Actors</dt>
+                        <dd>{{ selectedMovie.Actors }}</dd>
+                        <dt>Runtime</dt>
+                        <dd>{{ selectedMovie.Runtime }}</dd>
+                        <dt>Rating</dt>
+                        <dd>{{ selectedMovie.imdbRating }}</dd>
+                    </dl>
+                </footer>
+            </section>
+        </transition>
+    </script>
+
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src='scripts/index.js' charset='utf-8'></script>
+</body>
+
+</html>
