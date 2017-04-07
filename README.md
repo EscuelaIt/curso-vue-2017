@@ -13,9 +13,13 @@ Para el curso sobre [VueJS2](https://vuejs.org/) es necesario tener instalado:
 
     Descripción: Aprenderemos qué es Vue, en qué se diferencia de otros frameworks y veremos una pequeña demostración de cómo funciona con un sencillo Hola Mundo con esteroides
 
+    [Código](https://github.com/EscuelaIt/curso-vue-2017/tree/00-introduccion-a-vuejs2)
+
 1. __Entorno de desarrollo y primer componente con VueJS__
 
     Descripción: Aprenderemos cómo empezar a crear un proyecto con Vue de manera sencilla y nuestro primer componente desglosado.
+
+    [Código](https://github.com/EscuelaIt/curso-vue-2017/tree/01-entorno-de-desarrollo-y-primer-componente-con-vuejs2)
 
 2. __Componentes avanzados: ciclo de vida, propiedades, eventos, binding…__
 
