@@ -1,4 +1,4 @@
-# Curso sobre VueJS2 para EsucelaIt
+# Curso sobre VueJS2 para EscuelaIt
 
 ## Bienvenida. Introducción a VueJS2. Comparativas. Hola Mundo
 
