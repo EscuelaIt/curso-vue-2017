@@ -1,0 +1,35 @@
+$white: rgb(239, 236, 236);
+$black: rgb(60, 72, 89);
+$color-kashmir-blue: rgb(69, 105, 144);
+
+.movie-list {
+    padding: 2rem;
+    ul {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(5, auto);
+    }
+    figure {
+        background-color: $white;
+
+        img {
+            width: 100%;
+        }
+        figcaption {
+            color: $color-kashmir-blue;
+            font-size: .9rem;
+            padding: .6rem;
+            text-align: center;
+        }
+    }
+    .no-results {
+        color: $black;
+        text-align: center;
+    }
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .8s
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+        opacity: 0
+    }
+}

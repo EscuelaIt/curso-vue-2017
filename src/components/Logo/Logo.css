@@ -1,0 +1,30 @@
+@import '../../assets/css/colors';
+
+.logo {
+    align-items: center;
+    border-bottom: 2px solid rgb(62, 154, 186);
+    color: var(--color-iron-grey);
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+    & h1 {
+        font-size: 1.3rem;
+        letter-spacing: .7rem;
+        text-transform: uppercase;
+    }
+    & .credits {
+        font-size: .75rem;
+    }
+    & .heart {
+        width: .9rem;
+        position: relative;
+        top: 3px;
+    }
+    & a:link,
+    & a:visited {
+        color: var(--color-iron-grey);
+    }
+    & a:hover {
+        color: var(--color-iron-grey);
+    }
+}

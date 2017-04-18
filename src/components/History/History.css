@@ -1,0 +1,16 @@
+@import '../../assets/css/colors';
+
+.history {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    & .no-results {
+        color: var(--color-black);
+        font-size: .9rem;
+    }
+    & .empty {
+        width: 3rem;
+        margin: 1rem 0;
+    }
+}

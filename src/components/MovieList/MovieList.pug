@@ -1,0 +1,14 @@
+.movie-list
+    ul(v-if="films")
+        li(v-for='film in films')
+            transition(appear name="fade")
+                article
+                    figure
+                        img(
+                            v-cloak
+                            v-bind:src='film.Poster'
+                            v-bind:alt='film.Title'
+                        )
+                        figcaption {{ film.Title }} ({{ film.Year }})
+    p.no-results(v-else) No hay resultados
+</div>

@@ -1,0 +1,12 @@
+:root {
+    /* Palette: https://coolors.co/114b5f-028090-e4fde1-456990-f45b69 */
+    --color-iron-grey: rgb(221, 221, 221);
+    --color-eden: rgb(17, 75, 95);
+    --color-blue-lagoon: rgb(2, 128, 144);
+    --color-hint-green: rgb(228, 253, 225);
+    --color-kashmir-blue: rgb(69, 105, 144);
+    --color-carnation: rgb(244, 91, 105);
+
+    --color-black: rgb(60, 72, 89);
+    --color-white: rgb(239, 236, 236);
+}
