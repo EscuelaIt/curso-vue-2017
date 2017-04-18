@@ -1,0 +1,18 @@
+.movie-list
+    ul(v-if='films')
+        li(v-for='film in films')
+            transition(appear name='fade')
+                article
+                    figure
+                        img(
+                            v-cloak
+                            v-bind:src='film.Poster'
+                            v-bind:alt='film.Title'
+                        )
+                        figcaption {{ film.Title }} ({{ film.Year }})
+    template(v-else)
+        img.empty(
+            src='../../assets/images/empty.svg'
+            alt=''
+        )
+        p.no-results No hay resultados

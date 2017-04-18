@@ -1,0 +1,11 @@
+.history
+    .history-list(
+        v-if="filmsWithNotes"
+    ) History
+    template(v-else)
+        img.empty(
+            src="../../assets/images/empty.svg"
+            alt=""
+        )
+        p.no-results Ninguna nota añadida
+</div>

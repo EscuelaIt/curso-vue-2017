@@ -1,0 +1,49 @@
+@import '../../assets/css/colors';
+
+.movie-list {
+    padding: 2rem;
+
+    & .no-results {
+        color: var(--color-black);
+        font-size: .9rem;
+    }
+    & .empty {
+        display: block;
+        margin: 1rem auto;
+        width: 3rem;
+    }
+
+    & ul {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(5, auto);
+    }
+
+    & figure {
+        background-color: var(--color-white);
+
+        & img {
+            width: 100%;
+        }
+
+        & figcaption {
+            color: var(--color-kashmir-blue);
+            font-size: .9rem;
+            padding: .6rem;
+            text-align: center;
+        }
+    }
+
+    & .no-results {
+        color: var(--color-black);
+        text-align: center;
+    }
+
+    & .fade-enter-active, .fade-leave-active {
+        transition: opacity .8s;
+    }
+
+    & .fade-enter, .fade-leave-to {
+        opacity: 0;
+    }
+}

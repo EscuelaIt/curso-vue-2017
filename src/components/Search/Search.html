@@ -1,0 +1,11 @@
+<form class='search' name='search' v-on:submit.prevent='onSubmit'>
+    <input
+        type='text'
+        name='criteria'
+        placeholder='Escribe una película ...'
+        ref='criteria'
+        v-model='criteria'
+        autofocus
+    />
+    <p v-show="criteria">Criterio de busqueda: {{ criteria | capitalize | invert }}</p>
+</form>
