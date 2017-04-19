@@ -1,8 +1,6 @@
 // Dependencies
 import Vue from 'vue'
-
-// Components
-import App from './App'
+import router from './router'
 
 // Show/Hide the production tip on startup
 Vue.config.productionTip = false
@@ -13,6 +11,6 @@ Vue.config.movues = process.env
 /* eslint-disable no-new */
 new Vue({
     el: '#app',
-    template: '<App/>',
-    components: { App }
+    router,
+    template: '<router-view />'
 })

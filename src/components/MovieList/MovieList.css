@@ -1,13 +1,13 @@
 @import '../../assets/css/colors';
 
 .movie-list {
-    padding: 2rem;
-
     & .no-results {
         color: var(--color-black);
         font-size: .9rem;
     }
-    & .empty {
+
+    & .empty,
+    & .error {
         display: block;
         margin: 1rem auto;
         width: 3rem;
@@ -16,7 +16,7 @@
     & ul {
         display: grid;
         grid-gap: 20px;
-        grid-template-columns: repeat(5, auto);
+        grid-template-columns: repeat(4, auto);
     }
 
     & figure {
@@ -24,6 +24,12 @@
 
         & img {
             width: 100%;
+
+            &.no-image {
+                height: 350px;
+                min-width: 250px;
+                opacity: .1;
+            }
         }
 
         & figcaption {
@@ -34,9 +40,16 @@
         }
     }
 
-    & .no-results {
-        color: var(--color-black);
+    & .no-results,
+    & .error,
+    & .empty,
+    & .loading {
         text-align: center;
+    }
+
+    & .no-results,
+    & .error {
+        color: var(--color-carnation);
     }
 
     & .fade-enter-active, .fade-leave-active {

@@ -33,3 +33,17 @@ a {
         color: var(--color-white);
     }
 }
+
+strong,
+b {
+    font-weight: 700;
+}
+
+.example {
+    font-size: 1rem;
+    margin: 1rem 0;
+    background-color: #97C1A8;
+    border: 1px;
+    padding: 1rem;
+    border: 1px solid #75a086;
+}

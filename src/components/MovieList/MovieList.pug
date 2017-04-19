@@ -1,20 +1,26 @@
 .movie-list
+    h2.example
+        strong Criterio de buqueda:
+        | &nbsp;{{ criteria }}
     ul(v-if='films')
         li(v-for='film in films')
             transition(appear name='fade')
                 article
-                      figure
-                          img.no-image(
-                              v-if='film.Poster === "N/A"'
-                              v-cloak
-                              src='../../assets/images/image.svg'
-                              v-bind:alt='film.Title'
-                              )
-                          img(
-                              v-else
-                              v-cloak
-                              v-bind:src='film.Poster'
-                              v-bind:alt='film.Title'
-                          )
+                    router-link(
+                        v-bind:to='{ name: "movie", params: { film: film.imdbID }}'
+                    )
+                        figure
+                            img.no-image(
+                                v-if='film.Poster === "N/A"'
+                                v-cloak
+                                src='../../assets/images/image.svg'
+                                v-bind:alt='film.Title'
+                                )
+                            img(
+                                v-else
+                                v-cloak
+                                v-bind:src='film.Poster'
+                                v-bind:alt='film.Title'
+                            )
 
-                          figcaption {{ film.Title }} ({{ film.Year }})
+                            figcaption {{ film.Title }} ({{ film.Year }})

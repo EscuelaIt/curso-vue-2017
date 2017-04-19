@@ -1,6 +1,11 @@
 <template lang='pug' src='./Search.pug'></template>
 
 <script>
+    /**
+     * Component: Search
+     * Description: Write a criteria and search films related with it
+    **/
+
     export default {
         name: 'Search',
         data () {
@@ -10,7 +15,6 @@
         },
         methods: {
             onSubmit () {
-                console.log('search', this.criteria)
                 this.$emit('search', this.criteria)
             },
             focus () {

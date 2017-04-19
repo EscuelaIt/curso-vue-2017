@@ -2,7 +2,10 @@
     ul.history-list(
         v-if='filmsWithNotes'
     )
-        li.item(v-for='film in filmsWithNotes') {{ film.Title }}
+        li.item(v-for='film in filmsWithNotes')
+            router-link(
+                v-bind:to='{ name: "movie", params: { film: film.imdbID }}'
+            ) {{ film.Title }}
     template(v-else)
         img.empty(
             src='../../assets/images/empty.svg'

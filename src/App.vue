@@ -7,41 +7,47 @@
         aside
             History
         main(role='main')
-            MovieList(v-bind:films='movies')
+            router-view(name='return')
+            router-view
 </template>
 
 <script>
-    import mocks from '@/mocks.js'
+    /**
+     * Component: App
+     * Description: Base component that load router only
+    **/
 
+    // Dependencies
+    import router from '@/router'
+
+    // Components
     import Logo from '@/components/Logo/Logo'
     import Search from '@/components/Search/Search'
     import History from '@/components/History/History'
-    import MovieList from '@/components/MovieList/MovieList'
 
     export default {
         name: 'app',
         components: {
             Logo,
             Search,
-            History,
-            MovieList
-        },
-        data: function () {
-            return {
-                movies: mocks.Search
-            }
+            History
         },
         methods: {
             onSearch (criteria) {
-                console.log('searching ...', criteria)
+                router.push({
+                    name: 'movieList',
+                    query: {
+                        criteria
+                    }
+                })
             }
         }
     }
 </script>
 
 <style lang='css'>
-    @import './assets/css/reset';
-    @import './assets/css/global';
+    @import 'assets/css/reset';
+    @import 'assets/css/global';
 </style>
 
 <style scoped>

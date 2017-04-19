@@ -1,0 +1,23 @@
+.movie(v-if='movie')
+    img.poster(
+        v-if='movie.Poster != "N/A"'
+        v-bind:src='movie.Poster'
+        v-bind:alt='movie.Title + " poster"'
+    )
+    .data
+        h2 {{ movie.Title }}
+        p.plot {{ movie.Plot }}
+        aside.movie-data
+            dl
+                dt Genre
+                dd {{ movie.Genre }}
+                dt Year
+                dd {{ movie.Year }}
+                dt Director
+                dd {{ movie.Director }}
+                dt Actors
+                dd {{ movie.Actors }}
+                dt Runtime
+                dd {{ movie.Runtime }}
+                dt Rating
+                dd {{ movie.imdbRating }}

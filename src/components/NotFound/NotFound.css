@@ -1,0 +1,17 @@
+.not-found {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+
+    & h1 {
+        font-size: 10rem;
+        font-weight: 700;
+    }
+
+    & p {
+        font-size: 1.5rem;
+        padding: 2rem 0 .5rem;
+    }
+}

@@ -1,5 +1,8 @@
 div.logo
-    h1 Movues
+    h1
+        router-link(
+            v-bind:to='{ name: "movieList" }'
+        ) Movues
     p.credits
         small
             | Made with&nbsp;
