@@ -7,7 +7,7 @@
 Para el curso sobre [VueJS2](https://vuejs.org/) es necesario tener instalado:
 
 * Cualquier editor como [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCode](https://code.visualstudio.com/), o cualquier otro editor/IDE que nos guste.
-* [NodeJS](https://nodejs.org/es/) en su version [LTS](https://nodejs.org/es/download/).
+* [NodeJS](https://nodejs.org/es/) en su versión [LTS](https://nodejs.org/es/download/).
 
 ## Clases
 
@@ -27,21 +27,29 @@ Para el curso sobre [VueJS2](https://vuejs.org/) es necesario tener instalado:
 
     Descripción: Es esta clase aprenderemos cómo funciona un componente en detalle: su ciclo de vida, propiedades, métodos, data binding...etc.
 
+    [Código](https://github.com/EscuelaIt/curso-vue-2017/tree/02-componentes-avanzados-ciclo-de-vida-props)
+
 3. __Plantillas y estilos: HTML/Jade, CSS/Sass/PostCss, Directivas, transiciones…__
 
     Descripción: En esta sesión aprenderemos cómo mejorar las plantillas de nuestros componentes, cómo funcionan los estilos y cómo hacer animaciones
+
+    [Código](https://github.com/EscuelaIt/curso-vue-2017/tree/03-plantillas-estilos-directivas-transiciones)
 
 4. __Anidando componentes. Comunicación entre componentes.__
 
     Descripción: Aprenderemos a interrelacionar componentes, anidarlos, y comunicarlos entre ellos mediante datos y eventos.
 
+    [Código](https://github.com/EscuelaIt/curso-vue-2017/tree/04-anidando-y-comunicando-componentes)
+
 5. __Single page Apps: routing con vue-router__
 
     Descripción: Con la biblioteca oficial de VUE para crear rutas, crearemos de forma sencilla una SPA completa utilizando rutas principales y anidadas.
 
+    [Código](https://github.com/EscuelaIt/curso-vue-2017/tree/05-routing-con-vue-router)
+
 6. __Conectando con servicios externos__
 
-    Descripción: Nuestros componentes no viven aislados del mundo, así que lo conectaremos con datos reales para que se muestran en nuestra aplicación basandonos en la librería Vue-Axios y firebase con la biblioteca oficial de VUE para firebase vuefire
+    Descripción: Nuestros componentes no viven aislados del mundo, así que lo conectaremos con datos reales para que se muestran en nuestra aplicación basándonos en la librería Vue-Axios y Firebase con la biblioteca oficial de VUE para firebase `vuefire`
 
 7. __Debuggeando y testeando nuestros componentes__
 
