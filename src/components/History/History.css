@@ -1,0 +1,20 @@
+@import '../../assets/css/colors';
+
+.history {
+    & .no-results {
+        color: var(--color-black);
+        font-size: .9rem;
+    }
+    & .empty {
+        width: 3rem;
+        margin: 1rem 0;
+    }
+
+    & .item {
+        display: flex;
+
+        border-bottom: 1px solid rgb(204, 202, 202);
+        flex-grow: 1;
+        padding: 1rem;
+    }
+}

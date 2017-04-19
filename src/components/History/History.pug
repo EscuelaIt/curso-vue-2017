@@ -1,0 +1,11 @@
+.history
+    ul.history-list(
+        v-if='filmsWithNotes'
+    )
+        li.item(v-for='film in filmsWithNotes') {{ film.Title }}
+    template(v-else)
+        img.empty(
+            src='../../assets/images/empty.svg'
+            alt=''
+        )
+        p.no-results Ninguna nota añadida

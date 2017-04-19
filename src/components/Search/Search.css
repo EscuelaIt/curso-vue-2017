@@ -1,0 +1,16 @@
+@import '../../assets/css/colors';
+
+.search {
+    border-bottom: 1px solid rgb(204, 202, 202);
+    padding: .5rem;
+    text-align: right;
+
+    & input {
+        background-image: url('../../assets/images/search.svg');
+        background-repeat: no-repeat;
+        background-size: 1.5rem;
+        background-position: right .3rem center;
+        margin-right: 2rem;
+        padding: .7rem 2rem .7rem .7rem;
+    }
+}

@@ -1,0 +1,13 @@
+form.search(
+    name='search'
+    v-on:submit.prevent='onSubmit'
+)
+    input(
+        type='text'
+        name='criteria'
+        placeholder='Escribe una película ...'
+        ref='criteria'
+        v-model='criteria'
+        v-on:keyup.ctrl.70='focus()'
+        autofocus='true'
+    )
