@@ -47,8 +47,6 @@
 <style scoped>
     @import './assets/css/colors';
 
-    @import './assets/css/colors';
-
     .movues {
         background-color: var(--color-iron-grey);
         color: var(--color-black);
@@ -83,6 +81,6 @@
         background: var(--color-iron-grey);
         grid-area: main;
 
-        padding: 5rem;
+        padding: 2rem 4rem;
     }
 </style>

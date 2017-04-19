@@ -3,16 +3,18 @@
         li(v-for='film in films')
             transition(appear name='fade')
                 article
-                    figure
-                        img(
-                            v-cloak
-                            v-bind:src='film.Poster'
-                            v-bind:alt='film.Title'
-                        )
-                        figcaption {{ film.Title }} ({{ film.Year }})
-    template(v-else)
-        img.empty(
-            src='../../assets/images/empty.svg'
-            alt=''
-        )
-        p.no-results No hay resultados
+                      figure
+                          img.no-image(
+                              v-if='film.Poster === "N/A"'
+                              v-cloak
+                              src='../../assets/images/image.svg'
+                              v-bind:alt='film.Title'
+                              )
+                          img(
+                              v-else
+                              v-cloak
+                              v-bind:src='film.Poster'
+                              v-bind:alt='film.Title'
+                          )
+
+                          figcaption {{ film.Title }} ({{ film.Year }})

@@ -3,15 +3,13 @@
 <script>
     export default {
         name: 'MovieList',
-        props: ['films']
-        // Prop vlaidations
-        // props: {
-        //     films: {
-        //         type: Array,
-        //         default: undefined,
-        //         required: false
-        //     }
-        // }
+        props: {
+            films: {
+                type: Array,
+                default: undefined,
+                required: false
+            }
+        }
     }
 </script>
 
