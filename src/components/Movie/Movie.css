@@ -1,14 +1,22 @@
 @import '../../assets/css/colors';
 .movie {
-    display: flex;
-    flex-direction: row;
     background: var(--color-white);
     padding: 2rem;
     border-radius: 4px;
     max-width: 800px;
+    display: grid;
+    grid-template-areas:
+        'poster movie'
+        'notes notes';
+
+    & .notes {
+        margin-top: 2rem;
+        grid-area: notes;
+    }
 
     & .poster {
         margin-right: 2rem;
+        grid-area: poster;
     }
 
     & h2 {
@@ -42,5 +50,6 @@
         grid-area: footer;
         margin-top: 2rem;
         padding: 0 1rem;
+        grid-area: data;
     }
 }

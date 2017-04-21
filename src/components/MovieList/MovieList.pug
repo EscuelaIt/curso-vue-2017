@@ -1,7 +1,4 @@
 .movie-list
-    h2.example
-        strong Criterio de buqueda:
-        | &nbsp;{{ criteria }}
     ul(v-if='films')
         li(v-for='film in films')
             transition(appear name='fade')
@@ -21,6 +18,18 @@
                                 v-cloak
                                 v-bind:src='film.Poster'
                                 v-bind:alt='film.Title'
-                            )
+                               )
 
                             figcaption {{ film.Title }} ({{ film.Year }})
+    template(v-else-if='loading')
+        img.empty(
+            src='../../assets/images/loading.svg'
+            alt='Loading ...'
+        )
+        p.loading Loading
+    template(v-else-if='error')
+        img.error(
+            src='../../assets/images/error.svg'
+            v-bind:alt='error'
+        )
+        p.no-results Error: {{ error }}

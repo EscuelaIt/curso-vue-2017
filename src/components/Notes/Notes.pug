@@ -1,0 +1,19 @@
+.notes
+    form.create(
+        v-on:submit.prevent='onSubmitNote()'
+    )
+        input(
+            type='text'
+            name='name'
+            placeholder='Add your notes about this movie'
+            autofocus
+            v-model='myNote'
+            ref='note'
+        )
+        input(
+            type='submit'
+            value='Guardar'
+        )
+    .show
+        ul(v-if='notes.length')
+            li(v-for='note in notes') {{ note }}

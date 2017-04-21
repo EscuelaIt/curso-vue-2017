@@ -1,7 +1,10 @@
 <template lang='pug' src='./MovieList.pug'></template>
 
 <script>
-    import mocks from '@/mocks.js'
+
+    import Vue from 'vue'
+
+    import $ from 'jquery'
 
     /**
      * Component: MovieList
@@ -36,7 +39,43 @@
         },
         methods: {
             fetch (criteria = undefined) {
-                this.films = mocks.Search
+                const ENDPOINT = `${Vue.config.movues.ENDPOINTS.SEARCH}${criteria}`
+                this.loading = true
+
+                $.ajax({
+                    type: 'GET',
+                    url: ENDPOINT,
+                    dataType: 'json',
+                    success: (json) => {
+                        const IS_OK = json.Response === 'True'
+                        if (!IS_OK) {
+                            this.films = undefined
+                            this.loading = false
+                            this.error = json.Error
+                            throw json.Error
+                        }
+                        this.films = json.Search
+                        this.loading = false
+                    }
+                })
+
+                // return window.fetch(ENDPOINT)
+                //     .then(response => response.json())
+                //     .then(json => {
+                //         const IS_OK = json.Response === 'True'
+
+                //         if (!IS_OK) {
+                //             throw new Error(json.Error)
+                //         }
+                //         this.films = json.Search
+                //         this.loading = false
+                //     })
+                //     .catch(err => {
+                //         this.films = undefined
+                //         this.loading = false
+                //         this.error = err.message
+                //         throw err.message
+                //     })
             }
         }
     }

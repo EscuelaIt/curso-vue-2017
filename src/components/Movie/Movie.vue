@@ -7,7 +7,14 @@
     **/
 
     // Dependencies
-    import mocks from '@/mocks.js'
+
+    import Vue from 'vue'
+
+    import axios from 'axios'
+    import VueAxios from 'vue-axios'
+    Vue.use(VueAxios, axios)
+
+    import Notes from '@/components/Notes/Notes'
 
     export default {
         name: 'Movie',
@@ -15,6 +22,9 @@
             return {
                 movie: undefined
             }
+        },
+        components: {
+            Notes
         },
         props: {
             film: {
@@ -28,7 +38,13 @@
         },
         methods: {
             fetchFilm () {
-                this.movie = mocks.Film
+                const ENDPOINT = `${Vue.config.movues.ENDPOINTS.FILM}${this.film}`
+
+                Vue.axios.get(ENDPOINT)
+                    .then((response) => {
+                        console.log(response.data)
+                        this.movie = response.data
+                    })
             }
         }
     }
