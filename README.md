@@ -50,6 +50,7 @@ Para el curso sobre [VueJS2](https://vuejs.org/) es necesario tener instalado:
 6. __Conectando con servicios externos__
 
     Descripción: Nuestros componentes no viven aislados del mundo, así que lo conectaremos con datos reales para que se muestran en nuestra aplicación basándonos en la librería Vue-Axios y Firebase con la biblioteca oficial de VUE para firebase `vuefire`
+    [Código](https://github.com/EscuelaIt/curso-vue-2017/tree/06-external-API)
 
 7. __Debuggeando y testeando nuestros componentes__
 
