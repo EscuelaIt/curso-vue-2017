@@ -63,10 +63,53 @@ variables de desarrollo)
 
 ## Sobre la clase
 
-En este clase hablamos sobre [vue-router](https://router.vuejs.org/en/), la
-solución oficial de Vue para la gestión y creación de rutas para nuestras
-SPA's basadas en Vue.
+En este clase hablamos sobre las disitntas formas que tenemos de conectarnos a
+servicios externos, como la api de [OMDB](http://www.omdbapi.com/). Para esta
+clase veremos casos de uso con la propia API de HTML5
+[fetch API](https://developer.mozilla.org/es/docs/Web/API/Fetch_API) y con
+librerias externas a Vue, como [jQuery](http://api.jquery.com/jquery.ajax/).
+Admeás, utilizaremos plugins propios para Vue como
+[Vue-resource](https://github.com/pagekit/vue-resource),
+[Vue-axios](https://github.com/imcvampire/vue-axios) y nos conectaremos a
+[Firebase](https://firebase.google.com) mediante el plugin de Vue,
+[vuefire](https://github.com/vuejs/vuefire).
 
-En la clase, y el código veremos la creación de rutas, rutas genéricas, gestión
-de componentes y múltiples componentes en las rutas, y el paso de `props` a estos
-componentes mediante las ruta, el uso de rutas anidades, ...
+Por último, en la clase hicimos un repaso del nuevo protoclo de comunicaciones
+que esta pisnado fuerte en el mercado web, [GraphQL](http://graphql.org/learn/),
+ y explicamos como se usa medinate la
+[GraphQL API de Github](https://developer.github.com/early-access/graphql/),
+y cual es el plugin mas conocido para Vue,
+[Vue-apollo](https://github.com/Akryum/vue-apollo).
+
+### Ejemplo que utilizamos para la GprahQL API de Github
+
+Obtener todos watchers, y información de este repositorio, publicado bajo
+EscuelaIt.
+
+```
+query ($owner: String!, $name: String!, $first: Int) {
+  repository(owner: $owner, name: $name) {
+    name
+    description
+    path
+    isFork
+    license
+    watchers (first: $first) {
+      nodes {
+        name
+        company
+        bio
+        path
+      }
+    }
+  }
+}
+```
+
+```
+{
+  "owner": "EscuelaIt",
+  "name": "curso-vue-2017",
+  "first": 10
+}
+```
