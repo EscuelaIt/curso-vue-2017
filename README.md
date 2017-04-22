@@ -63,19 +63,19 @@ variables de desarrollo)
 
 ## Sobre la clase
 
-En este clase hablamos sobre las disitntas formas que tenemos de conectarnos a
-servicios externos, como la api de [OMDB](http://www.omdbapi.com/). Para esta
+En este clase hablamos sobre las distintas formas que tenemos de conectarnos a
+servicios externos, como la API de [OMDB](http://www.omdbapi.com/). Para esta
 clase veremos casos de uso con la propia API de HTML5
 [fetch API](https://developer.mozilla.org/es/docs/Web/API/Fetch_API) y con
-librerias externas a Vue, como [jQuery](http://api.jquery.com/jquery.ajax/).
-Admeás, utilizaremos plugins propios para Vue como
+librerías externas a Vue, como [jQuery](http://api.jquery.com/jquery.ajax/).
+Además, utilizaremos plugins propios para Vue como
 [Vue-resource](https://github.com/pagekit/vue-resource),
 [Vue-axios](https://github.com/imcvampire/vue-axios) y nos conectaremos a
 [Firebase](https://firebase.google.com) mediante el plugin de Vue,
 [vuefire](https://github.com/vuejs/vuefire).
 
 Por último, en la clase hicimos un repaso del nuevo protoclo de comunicaciones
-que esta pisnado fuerte en el mercado web, [GraphQL](http://graphql.org/learn/),
+que esta pisando fuerte en el mercado web, [GraphQL](http://graphql.org/learn/),
  y explicamos como se usa medinate la
 [GraphQL API de Github](https://developer.github.com/early-access/graphql/),
 y cual es el plugin mas conocido para Vue,
