@@ -1,40 +1,4 @@
 export default {
-    'Film': {
-        'Title': 'Sharknado 3: Oh Hell No!',
-        'Year': '2015',
-        'Rated': 'TV-14',
-        'Released': '22 Jul 2015',
-        'Runtime': '93 min',
-        'Genre': 'Horror, Sci-Fi',
-        'Director': 'Anthony C. Ferrante',
-        'Writer': 'Thunder Levin',
-        'Actors': 'Ian Ziering, Tara Reid, Cassandra Scerbo, Frankie Muniz',
-        'Plot': 'When Fin and April go to Florida for the summer vacation, strong winds and lots of rain comes to Florida and a Sharknado comes and destroyes Florida. The Sharknado goes to Washington D.C. and sharks falling from the sky. It\'s up to Fin and April to stop the Sharknado the third time.',
-        'Language': 'English',
-        'Country': 'USA',
-        'Awards': '2 nominations.',
-        'Poster': 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTc5MDUzNzQzOF5BMl5BanBnXkFtZTgwMDg4NTYzNTE@._V1_SX300.jpg',
-        'Ratings': [
-            {
-                'Source': 'Internet Movie Database',
-                'Value': '4.2/10'
-            },
-            {
-                'Source': 'Rotten Tomatoes',
-                'Value': '36%'
-            }
-        ],
-        'Metascore': 'N/A',
-        'imdbRating': '4.2',
-        'imdbVotes': '8,154',
-        'imdbID': 'tt3899796',
-        'Type': 'movie',
-        'DVD': '06 Oct 2015',
-        'BoxOffice': 'N/A',
-        'Production': 'The Asylum',
-        'Website': 'N/A',
-        'Response': 'True'
-    },
     'Search': [
         {
             'Title': 'Sharknado',

@@ -1,6 +1,6 @@
 <template lang='pug'>
     router-link(
-        to='/'
+        v-bind:to='{ name: "movieList" }'
     ) ↩ Back To Movie List
 </template>
 

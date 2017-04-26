@@ -21,18 +21,14 @@ export default new Router({
             component: App,
             children: [
                 {
-                    // loclahost:8080?criteria=[criterio-de-busqeda]
-                    path: '',
+                    path: '', // ?criteria=pelicula
                     name: 'movieList',
                     component: MovieList,
                     props: route => ({
-                        // RandomWords: Genera una pañabra aleatoria para
-                        // cuando `criteria` no viene definido en la ruta
                         criteria: route.query.criteria || RandomWords()
                     })
                 },
                 {
-                    // localhost:8080/film/[identificdor]
                     path: '/film/:film',
                     name: 'movie',
                     components: {

@@ -7,24 +7,20 @@
     **/
 
     // Dependencies
-
     import Vue from 'vue'
 
-    import axios from 'axios'
-    import VueAxios from 'vue-axios'
-    Vue.use(VueAxios, axios)
-
+    // Components
     import Notes from '@/components/Notes/Notes'
 
     export default {
         name: 'Movie',
+        components: {
+            Notes
+        },
         data () {
             return {
                 movie: undefined
             }
-        },
-        components: {
-            Notes
         },
         props: {
             film: {
@@ -41,8 +37,7 @@
                 const ENDPOINT = `${Vue.config.movues.ENDPOINTS.FILM}${this.film}`
 
                 Vue.axios.get(ENDPOINT)
-                    .then((response) => {
-                        console.log(response.data)
+                    .then(response => {
                         this.movie = response.data
                     })
             }

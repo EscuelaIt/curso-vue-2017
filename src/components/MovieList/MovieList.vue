@@ -1,15 +1,10 @@
 <template lang='pug' src='./MovieList.pug'></template>
 
 <script>
-
+    /* IMPORTAMOS ESTO PARA LA const ENDPOINT */
     import Vue from 'vue'
 
-    import $ from 'jquery'
-
-    /**
-     * Component: MovieList
-     * Description: List all films based on search criteria
-    **/
+    // import $ from 'jquery'
 
     export default {
         name: 'MovieList',
@@ -34,48 +29,39 @@
             }
         },
         created () {
-            console.log('created')
             return this.fetch(this.criteria)
         },
         methods: {
             fetch (criteria = undefined) {
+                if (!criteria) {
+                    this.films = undefined
+                    this.loading = false
+                    this.error = 'Error'
+
+                    return false
+                }
+
                 const ENDPOINT = `${Vue.config.movues.ENDPOINTS.SEARCH}${criteria}`
+
                 this.loading = true
 
-                $.ajax({
-                    type: 'GET',
-                    url: ENDPOINT,
-                    dataType: 'json',
-                    success: (json) => {
+                return window.fetch(ENDPOINT)
+                    .then(response => response.json())
+                    .then(json => {
                         const IS_OK = json.Response === 'True'
+
                         if (!IS_OK) {
-                            this.films = undefined
-                            this.loading = false
-                            this.error = json.Error
-                            throw json.Error
+                            throw new Error(json.Error)
                         }
                         this.films = json.Search
                         this.loading = false
-                    }
-                })
-
-                // return window.fetch(ENDPOINT)
-                //     .then(response => response.json())
-                //     .then(json => {
-                //         const IS_OK = json.Response === 'True'
-
-                //         if (!IS_OK) {
-                //             throw new Error(json.Error)
-                //         }
-                //         this.films = json.Search
-                //         this.loading = false
-                //     })
-                //     .catch(err => {
-                //         this.films = undefined
-                //         this.loading = false
-                //         this.error = err.message
-                //         throw err.message
-                //     })
+                    })
+                    .catch(err => {
+                        this.films = undefined
+                        this.loading = false
+                        this.error = err.message
+                        throw err.message
+                    })
             }
         }
     }

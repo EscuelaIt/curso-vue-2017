@@ -1,6 +1,11 @@
 <template lang='pug' src='./Notes.pug'></template>
 
 <script>
+    /**
+     * Component: Notes
+     * Description: Save notes by film
+    **/
+
     import Vue from 'vue'
 
     import VueFire from 'vuefire'
@@ -13,6 +18,9 @@
 
     export default {
         name: 'Notes',
+        /*
+        Al iniciar firebase le pedimos que conecte con la tabla notes que hemos creado nosotros en firebase
+        */
         firebase: {
             notes: db.ref('notes')
         },
@@ -28,6 +36,10 @@
                 required: true
             }
         },
+        /*
+        Por defecto firebase no nos permite más que conectarnos con la base de datos.
+        Durante el created recibimos la prop this.filmID y le pedimos a firebase las notas relacionadas con ese ID
+        */
         created () {
             this.$firebaseRefs.notes.child(
                 this.filmId
@@ -37,13 +49,13 @@
         },
         methods: {
             onSubmitNote () {
-                console.log('submit note', this.myNote)
-
+                // Save
                 this.$firebaseRefs.notes
                     .child(this.filmId)
                     .child(this.notes.length)
                     .set(this.myNote)
 
+                // On success
                 this.myNote = undefined
                 this.onFocus()
             },

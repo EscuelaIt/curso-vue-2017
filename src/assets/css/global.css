@@ -15,15 +15,21 @@ body {
 input {
     background-color: #fff;
     border: 1px solid #d6d6d6;
-    border-radius: 3px;
     font-size: 1rem;
     padding: .5rem;
 }
 
 input[type=submit] {
-    background-color: #2ecc71;
-    border-color: #90ffbf;
+    background-color: var(--color-eden);
+    color: var(--color-white);
     cursor: pointer;
+    text-transform: uppercase;
+    padding: 0 1rem;
+    transition: all .2s ease;
+    &:hover {
+        background-color: var(--color-white);
+        color: var(--color-eden);
+    }
 }
 
 a {
@@ -32,18 +38,4 @@ a {
     &:hover {
         color: var(--color-white);
     }
-}
-
-strong,
-b {
-    font-weight: 700;
-}
-
-.example {
-    font-size: 1rem;
-    margin: 1rem 0;
-    background-color: #97C1A8;
-    border: 1px;
-    padding: 1rem;
-    border: 1px solid #75a086;
 }

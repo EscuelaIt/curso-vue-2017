@@ -18,7 +18,10 @@
     **/
 
     // Dependencies
+    import Vue from 'vue'
     import router from '@/router'
+    
+    // import $ from 'jquery'
 
     // Components
     import Logo from '@/components/Logo/Logo'
@@ -40,6 +43,73 @@
                         criteria
                     }
                 })
+            },
+            fetch (criteria = undefined) {
+                const ENDPOINT = `${Vue.config.movues.ENDPOINTS.SEARCH}${criteria}`
+
+                /*************************************************
+                XMLHttprequest Asíncrona
+                https://caniuse.com/#search=XMLHttpRequest
+                ************************************************/
+                // var req = new XMLHttpRequest()
+                // /* El parámetro `true` indica que es asíncrona */
+                // req.open('GET', ENDPOINT, true)
+                // /* Observamos el estado de la petición */
+                // req.onreadystatechange = function (aEvt) {
+                //     /* Cuando la operación ha terminado */
+                //     if (req.readyState === 4) {
+                //         /* Y el resultado es satisfactorio */
+                //         if (req.status === 200) {
+                //             let foundMovies = JSON.parse(req.responseText)
+                //             console.log(foundMovies.Search)
+                //             this.movies = foundMovies.Search
+                //         } else {
+                //             console.log('Error loading page\n')
+                //         }
+                //     }
+                // }.bind(this)
+                // /* iniciamos la solicitud */
+                // req.send(null)
+
+                /*************************************************
+                jQuery
+                using jQuery as XMLHttpRequest wrapper
+
+                NOTE >>> npm install jquery
+                UNCOMMENT >>> import $ from 'jquery'
+                ************************************************/
+                // $.ajax({
+                //     type: 'GET',
+                //     url: ENDPOINT,
+                //     /* El tipo de dato que esperamos recibir */
+                //     dataType: 'json',
+                //     success: function (response) {
+                //         console.log(response.Search)
+                //         this.movies = response.Search
+                //     }.bind(this)
+                // })
+
+                /*************************************************
+                Fetch()
+                https://developers.google.com/web/updates/2015/03/introduction-to-fetch
+                ************************************************/
+                // fetch() allows you to make network requests similar to XMLHttpRequest (XHR). The main difference is that the Fetch API uses Promises, which enables a simpler and cleaner API, avoiding callback hell and having to remember the complex API of XMLHttpRequest.
+
+                return window.fetch(ENDPOINT)
+                    .then(response => response.json())
+                    .then(json => {
+                        const IS_OK = json.Response === 'True'
+
+                        if (!IS_OK) {
+                            throw new Error(json.Error)
+                        }
+
+                        this.movies = json.Search
+                    })
+                    .catch(err => {
+                        this.error = err.message
+                        throw err.message
+                    })
             }
         }
     }
