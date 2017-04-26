@@ -1,10 +1,7 @@
 <template lang='pug' src='./MovieList.pug'></template>
 
 <script>
-    /* IMPORTAMOS ESTO PARA LA const ENDPOINT */
-    import Vue from 'vue'
-
-    // import $ from 'jquery'
+    import { mapActions } from 'vuex'
 
     export default {
         name: 'MovieList',
@@ -32,7 +29,11 @@
             return this.fetch(this.criteria)
         },
         methods: {
+            ...mapActions([
+                'latestSearches'
+            ]),
             fetch (criteria = undefined) {
+                console.log(this.$store)
                 if (!criteria) {
                     this.films = undefined
                     this.loading = false
@@ -41,19 +42,11 @@
                     return false
                 }
 
-                const ENDPOINT = `${Vue.config.movues.ENDPOINTS.SEARCH}${criteria}`
-
                 this.loading = true
 
-                return window.fetch(ENDPOINT)
-                    .then(response => response.json())
-                    .then(json => {
-                        const IS_OK = json.Response === 'True'
-
-                        if (!IS_OK) {
-                            throw new Error(json.Error)
-                        }
-                        this.films = json.Search
+                this.latestSearches(criteria)
+                    .then(films => {
+                        this.films = films
                         this.loading = false
                     })
                     .catch(err => {

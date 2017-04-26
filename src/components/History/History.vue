@@ -5,15 +5,16 @@
      * Component: History
      * Description: List all films with notes!
     **/
-    import mocks from '@/mocks.js'
+    import { mapGetters } from 'vuex'
 
     export default {
         name: 'History',
-        data: function () {
-            return {
-                filmsWithNotes: mocks.Search
-            }
+        computed: {
+            ...mapGetters([
+                'latestSearches'
+            ])
         }
+
     }
 </script>
 

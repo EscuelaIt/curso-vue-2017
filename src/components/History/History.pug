@@ -1,11 +1,11 @@
 .history
     ul.history-list(
-        v-if='filmsWithNotes'
+        v-if='latestSearches'
     )
-        li.item(v-for='film in filmsWithNotes')
+        li.item(v-for='criteria in latestSearches')
             router-link(
-                v-bind:to='{ name: "movie", params: { film: film.imdbID }}'
-            ) {{ film.Title }}
+                v-bind:to='{ name: "movieList", query: { criteria: criteria }}'
+            ) {{ criteria }}
     template(v-else)
         img.empty(
             src='../../assets/images/empty.svg'
